@@ -25,3 +25,17 @@ You can run each project either using your IDE or *mvn spring-boot:run* starting
 * Movie Info - http://localhost:8082/movies/{movieId}
 * Ratings Data - http://localhost:8083/ratings/{userId}
 * Hystrix Dashboard - Go to http://localhost:8081/hystrix. Then enter *https://localhost:8081/actuator/hystrix.stream* to the inputbox.
+
+## Create Grpc API:
+### Server port : 9090
+### Endpoints
+
+### 1. Get Top Movies
+- **Method**: `getTopMovies`
+- **Request**: `TopMoviesRequest`
+  - `count`: Number of top movies to retrieve
+- **Response**: `TopMoviesResponse`
+  - `movies`: List of top movies
+    - `id`: Unique identifier of the movie
+    - `name`: Name of the movie
+    - `description`: Description of the movie

@@ -14,9 +14,8 @@ import java.io.IOException;
 public class DBConnection  {
     public static Statement connect(){
         String url="jdbc:mysql://localhost:3306/RATINGS";
-        String username="mohamed";
-        String filePath = "/home/mohamed/spring-boot-microservices/" +
-                "ratings-data-service/src/main/java/com/example/ratingsservice/models/Password.txt";
+        String username="abdu";
+        String filePath = "/media/abdu/01D6630A06A5A4B0/Last year/BigData/lab2/spring-boot-microservices/ratings-data-service/src/main/java/com/example/ratingsservice/models/Password.txt";
         String password="";
         try {
             // Open the file for reading

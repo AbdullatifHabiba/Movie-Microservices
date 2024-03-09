@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 public class MovieCatalogServiceApplication {
 
     private final int TIMEOUT = 3000;   // 3 seconds
-
+/*
     @Bean
     @LoadBalanced
     public RestTemplate getRestTemplate() {
@@ -26,7 +26,7 @@ public class MovieCatalogServiceApplication {
 
         return new RestTemplate(clientHttpRequestFactory);
     }
-
+*/
     public static void main(String[] args) {
         SpringApplication.run(MovieCatalogServiceApplication.class, args);
     }

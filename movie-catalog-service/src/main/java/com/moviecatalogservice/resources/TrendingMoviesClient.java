@@ -13,7 +13,7 @@ public class TrendingMoviesClient {
 
     public static void main(String[] args) {
         // Create a gRPC channel to connect to the server
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("0.0.0.0", 9090)
                 .usePlaintext() // Use plaintext communication (no encryption)
                 .build();
 

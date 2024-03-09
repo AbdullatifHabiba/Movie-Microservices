@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  movie-catalog:
+    build: 
+      context: .  # Dockerfile location
+      dockerfile: Dockerfile  # Dockerfile name
+    ports:
+      - "9090:9090"  # Expose port 9090 on the host and map it to port 9090 in the container
+    environment:
+      ADDRESS: "0.0.0.0"  # Set the address for the service

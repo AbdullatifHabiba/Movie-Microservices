@@ -1,5 +1,6 @@
 package com.example.ratingsservice.models;
-
+import com.example.ratingsservice.models.DBConnection;
+import java.sql.Statement;
 import java.util.List;
 
 public class UserRating {

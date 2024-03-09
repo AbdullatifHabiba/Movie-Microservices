@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+
+/home/mohamed/spring-boot-microservices/ratings-data-service/src/main/java/com/example/ratingsservice/models/Password.txt

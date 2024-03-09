@@ -57,30 +57,30 @@ public class DBConnection  {
             ArrayList<Integer> randRating =new ArrayList<>();
             // Create a Random object
             Random random = new Random();
-            for(int i=100;i<500;i++) {
-                // Generate a random number between 100 and 999 (inclusive)
-                int randomNumber = random.nextInt(1000) + 20;
-                int randomNumber2 = random.nextInt(1000) + 20;
-                int randomNumber3 = random.nextInt(5)+1;
-                uniqueuser.add(randomNumber);
-                uniqueMovieID.add(randomNumber2);
-                randRating.add(randomNumber3);
-                // Print the generated random number
-                System.out.println("Random Number: " + randomNumber+"  "+randomNumber2+" "+randomNumber3);
-            }
+            // for(int i=100;i<500;i++) {
+            //     // Generate a random number between 100 and 999 (inclusive)
+            //     int randomNumber = random.nextInt(1000) + 20;
+            //     int randomNumber2 = random.nextInt(1000) + 20;
+            //     int randomNumber3 = random.nextInt(5)+1;
+            //     uniqueuser.add(randomNumber);
+            //     uniqueMovieID.add(randomNumber2);
+            //     randRating.add(randomNumber3);
+            //     // Print the generated random number
+            //     System.out.println("Random Number: " + randomNumber+"  "+randomNumber2+" "+randomNumber3);
+            // }
             List<Integer> userID = new ArrayList<>(uniqueuser);
             List<Integer> movieID = new ArrayList<>(uniqueMovieID);
             try {
                 Statement state = DBConnection.connect();
-              for (int i=0;i<400;i++){
-                    String query_user = "insert into UserInfo values(" + "\'" + userID.get(i) + "\'" +",\'mohamed\');";
-                    String query = "insert into Rating values(" + "\'" + userID.get(i) + "\'" +
-                            "," + "\'" + movieID.get(i) + "\'" + "," + randRating.get(i) + ");";
-                  System.out.println(query_user);
-                  state.executeUpdate(query_user);
-                  state.executeUpdate(query);
-                  System.out.println("Successfully registered");
-                }
+            //   for (int i=0;i<400;i++){
+            //         String query_user = "insert into UserInfo values(" + "\'" + userID.get(i) + "\'" +",\'mohamed\');";
+            //         String query = "insert into Rating values(" + "\'" + userID.get(i) + "\'" +
+            //                 "," + "\'" + movieID.get(i) + "\'" + "," + randRating.get(i) + ");";
+            //       System.out.println(query_user);
+            //       state.executeUpdate(query_user);
+            //       state.executeUpdate(query);
+            //       System.out.println("Successfully registered");
+            //     }
             }catch(Exception e)
             {
                 System.out.println("Error");

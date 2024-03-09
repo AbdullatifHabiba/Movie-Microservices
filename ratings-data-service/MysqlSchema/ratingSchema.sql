@@ -8,11 +8,11 @@ CREATE TABLE UserInfo(
 );
 
 CREATE TABLE Rating(
-    userId VARCHAR(255),
+
     movieId VARCHAR(255),
     rating INT,
-    PRIMARY KEY(userId,movieId),
-    FOREIGN KEY (userId) REFERENCES UserInfo(id)
+    PRIMARY KEY(movieId)
+
 );
 
 

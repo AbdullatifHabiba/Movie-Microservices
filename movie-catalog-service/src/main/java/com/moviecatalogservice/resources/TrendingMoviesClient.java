@@ -21,7 +21,7 @@ public class TrendingMoviesClient {
         TrendingMoviesServiceGrpc.TrendingMoviesServiceBlockingStub stub =
                 TrendingMoviesServiceGrpc.newBlockingStub(channel);
         // Create a request message
-        TopMoviesRequest request = TopMoviesRequest.newBuilder().setCount(10).build();
+        TopMoviesRequest request = TopMoviesRequest.newBuilder().setCount(2).build();
 
         // Call the gRPC service method and get the response
         try{

@@ -35,8 +35,9 @@ public class RatingsResource {
     public UserRating getTopRating(@PathVariable int topElement) throws SQLException {
         Statement st =DBConnection.connect();
 //        System.out.println("select * from Rating where userId="+"\'"+userId+"\'");
-        ResultSet res=st.executeQuery("SELECT movieId, CEIL(AVG(rating)) AS average_value  FROM Rating" +
-                "  GROUP BY movieId ORDER BY average_value DESC  LIMIT "+topElement +" ;");
+        ResultSet res = st.executeQuery("SELECT movieId, rating FROM Rating" +
+        " ORDER BY rating DESC LIMIT " + topElement);
+
         List<Rating> ratings=new ArrayList<>();
         while(res.next()){
             ratings.add(new Rating(res.getString(1),Integer.parseInt(res.getString(2))));

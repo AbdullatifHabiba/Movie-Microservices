@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS RATINGS;
+USE RATINGS;
+
+
+CREATE TABLE UserInfo(
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+CREATE TABLE Rating(
+    userId VARCHAR(255),
+    movieId VARCHAR(255),
+    rating INT,
+    PRIMARY KEY(userId,movieId),
+    FOREIGN KEY (userId) REFERENCES UserInfo(id)
+);
+
+
+

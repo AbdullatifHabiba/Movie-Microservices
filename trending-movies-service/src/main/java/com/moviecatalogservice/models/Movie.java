@@ -1,5 +1,4 @@
 package com.moviecatalogservice.models;
-
 public class Movie {
 
     private String movieId;

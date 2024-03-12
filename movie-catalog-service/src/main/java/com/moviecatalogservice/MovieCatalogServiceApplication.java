@@ -10,6 +10,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
+import io.grpc.Grpc;
+import io.grpc.InsecureChannelCredentials;
+import io.grpc.ManagedChannel;
+
 @SpringBootApplication
 @EnableEurekaClient
 @EnableCircuitBreaker
@@ -17,7 +21,7 @@ import org.springframework.web.client.RestTemplate;
 public class MovieCatalogServiceApplication {
 
     private final int TIMEOUT = 3000;   // 3 seconds
-/*
+
     @Bean
     @LoadBalanced
     public RestTemplate getRestTemplate() {
@@ -26,7 +30,16 @@ public class MovieCatalogServiceApplication {
 
         return new RestTemplate(clientHttpRequestFactory);
     }
-*/
+    @Bean
+    @LoadBalanced
+    public ManagedChannel getManagedChannel(){
+
+        String target = "localhost:9091";
+        ManagedChannel channel = Grpc.newChannelBuilder(target, InsecureChannelCredentials.create())
+                .build();
+        return channel;
+
+    }
     public static void main(String[] args) {
         SpringApplication.run(MovieCatalogServiceApplication.class, args);
     }
